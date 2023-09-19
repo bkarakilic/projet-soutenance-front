@@ -1,0 +1,10 @@
+@mixin btn-green {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: $green;
+    color: $white;
+    border: 0;
+    padding: 4px 25px;
+    cursor: pointer;
+}

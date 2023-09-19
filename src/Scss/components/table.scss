@@ -1,0 +1,70 @@
+.table-historique {
+    border-spacing: 0;
+    margin: 0 auto;
+    max-width: 70vw;
+    width: 100%;
+    &__table {
+        width: 100%;
+        background-color: $grey-dark;
+        thead {
+            background-color: $grey-dark;
+            color: $white;
+            tr {
+                th {
+                    font-size: 20px;
+                    text-align: left;
+                    font-family: 'Open Sans', sans-serif;
+                    padding: 4px;   
+                }
+
+                .page-ndf__container__historique__description {
+                    width: 40%;
+                    min-width: 40%;
+                }
+
+                .page-ndf__container__historique__ref {
+                    width: 5%;
+                    max-width: 5%;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                cursor: pointer;
+                td {
+                    border: 1px solid $grey-dark;
+                    padding: 10px;
+                }
+                &:nth-child(even) {
+                    background-color: $white;
+                }
+                  
+                &:nth-child(odd) {
+                    background-color: $grey;
+                }
+
+                &:hover {
+                    background-color: $grey;
+                }
+            }
+        }
+    }
+
+    &__new {
+        width: 100%;
+        background-color: $grey-light;
+        padding: 10px;
+        box-sizing: border-box;
+        & > a {
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            color: $black;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
