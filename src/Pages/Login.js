@@ -1,6 +1,6 @@
-import Logo from "../../Components/Logo";
+import Logo from "../Components/Logo";
 import React, { useState } from 'react';
-import { IsAuthRedirect } from "../../Services/isAuthRedirect";
+import { IsAuthRedirect } from "../Services/isAuthRedirect";
 import { useNavigate } from "react-router-dom";
 
 
@@ -28,7 +28,8 @@ function Login () {
                 sessionStorage.setItem('user_login', data.username);
                 sessionStorage.setItem('user_roles', data.roles);
 
-                navigate('/');
+                navigate('/conges');
+
               } else {
                 setErrorMessage(data.message);
               }
@@ -50,7 +51,7 @@ function Login () {
                 <div className="page-login__form__wrapper-comptable">
                     <input type="checkbox" name="comptable" cked={comptable} onChange={(e) => setComptable(e.target.checked)} />
                     <label>Comptable</label>
-                </div> 
+                </div>
                 <button type="submit">Se connecter</button>
             </form>
         </div>

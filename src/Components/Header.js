@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../Logo';
-import { DestroySession } from '../../Services/DestroySession';
+import Logo from './Logo';
+import { DestroySession } from '../Services/DestroySession';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 const Header = () => {

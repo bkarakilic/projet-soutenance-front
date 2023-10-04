@@ -5,14 +5,19 @@ export const IsAuthRedirect = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const token = sessionStorage.getItem('user_token_id');
+    const userRoles = sessionStorage.getItem('user_roles');
 
     useEffect(() => {
         if (token && location.pathname == '/login') {
-            navigate('/ndf');
+            if (userRoles === 'comptable') {
+              navigate('/admin/conges');
+          } else {
+              navigate('/conges');
+          }
         }
 
         if (!token) {
             navigate('/login');
         }
-    }, [token, navigate, location]);
+    }, [token, userRoles, navigate, location]);
 };

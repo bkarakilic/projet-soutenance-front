@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IsAuthRedirect } from "../../Services/isAuthRedirect";
+import { IsAuthRedirect } from "../Services/isAuthRedirect";
 
 
 

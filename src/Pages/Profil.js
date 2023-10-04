@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { IsAuthRedirect } from "../../Services/isAuthRedirect";
-import Header from "../../Components/Header/Header";
-import { DestroySession } from '../../Services/DestroySession';
+import { IsAuthRedirect } from "../Services/isAuthRedirect";
+import Header from "../Components/Header";
+import { DestroySession } from '../Services/DestroySession';
 import { useNavigate } from 'react-router-dom';
+import TitlePage from '../Components/TitlePage';
 
 
 const Profil = () => {
@@ -57,7 +58,7 @@ const Profil = () => {
               console.error("Erreur lors de la récupération du profil:", error);
             }
         };
-      
+
         fetchData();
 
     }, []);
@@ -100,15 +101,15 @@ const Profil = () => {
         <div className="page-profil">
             <Header />
             <form className="page-profil__form" onSubmit={handleSubmit}  >
-                <h1>PROFIL / {login}</h1>
+                <TitlePage title={'Profil'} />
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                 <div className='page-profil__form__civilite'>
                     <label>Civilité :</label>
-                    <select 
-                        name="civilite" 
-                        className="page-profil__form__civilite__input" 
-                        value={civilite} 
-                        onChange={(e) => setCivilite(e.target.value)} 
+                    <select
+                        name="civilite"
+                        className="page-profil__form__civilite__input"
+                        value={civilite}
+                        onChange={(e) => setCivilite(e.target.value)}
                         required
                     >
                         <option value="" disabled hidden>Choisir une option</option>
@@ -134,7 +135,7 @@ const Profil = () => {
                 </div>
                 <div className='page-profil__form__prenom'>
                     <label>Ville :</label>
-                    <input type="text" name="ville" placeholder="Ville" className="page-login__form__ville" value={ville} onChange={(e) => setPrenom(e.target.value)} required/>
+                    <input type="text" name="ville" placeholder="Ville" className="page-login__form__ville" value={ville} onChange={(e) => setVille(e.target.value)} required/>
                 </div>
                 <div className='page-profil__form__code-postal'>
                     <label>Prénom :</label>
